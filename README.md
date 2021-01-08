@@ -5,14 +5,11 @@
 > In computational geometry and robotics, simultaneous localization and mapping (SLAM) is the computational problem of constructing or updating a map of an unknown environment while simultaneously keeping track of an agent 's location within it.
 > 
 
-To do this there are two types of planners. The Global Planner and Local Planner. Global Planner will determine a clear path to the target location.
-The Local planner will execute the path of the Global Planner but will also handle dynamic obstacles.
+It is the process of buiilding a map using range sensors (e.g. laser sensors, 3D sensors, ultrasonic sensors) while the robot is moving around and exploring an unknown area.
 
-Select the 2D nav goal button in RVIZ, in order to define a good location for the robot. For example I want the robot to move to this
-location and you can see that the robot first plan a static obstacle free path which we call the global path planning and then executes the path using its local
-path planner which also avoids dynamic obstacles.
+Sensor Fusion: This process uses filtering techniques like Kalman filters or particle filters.
 
-![](NavigationSlam.gif)
+![](Slam.gif)
 ---
 
 ## Table of Contents
@@ -38,8 +35,8 @@ source devel/setup.bash
 Next, the robot is started inside the gazebo world, and the visualization program RVIZ is opened.
 
 ```
-roslaunch turtlebot3_gazebo turtlebot3_house.launch
-roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=/home/ros/ros_map/tb3_house_map.yaml
+roslaunch turtlebot3_navigation turtlebot3_slam.launch slam_methods:=gmapping
+roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
  
 ```
 
