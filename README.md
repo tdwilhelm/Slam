@@ -1,9 +1,9 @@
 <!--![](/images/.jpg?raw=false)-->
 
-# Autonomous Navigation 
+# Simultaneous Localization and Mapping (SLAM) 
 
-> Typically we want to send the robot to a specific location and the robot should navigate autonomously to that location.
-> We just need to send a good location to the robot and the navigation stack will make the robot navigate to it while avoiding obstacles.
+> In computational geometry and robotics, simultaneous localization and mapping (SLAM) is the computational problem of constructing or updating a map of an unknown environment while simultaneously keeping track of an agent 's location within it.
+> 
 
 To do this there are two types of planners. The Global Planner and Local Planner. Global Planner will determine a clear path to the target location.
 The Local planner will execute the path of the Global Planner but will also handle dynamic obstacles.
